@@ -17,7 +17,7 @@ function Home() {
   const [cardInfo, setCardInfo] = useState([]);
   useEffect(() => {
     async function getClasses(){
-      const response = await fetch(`http://localhost:5000/home`);
+      const response = await fetch(`https://job-board-backend-yq3b.onrender.com/home`);
       if(response.ok){
         //const message = `An error occurred: ${response.statusText}`;
         //window.alert(message);

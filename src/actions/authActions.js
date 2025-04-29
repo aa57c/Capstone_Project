@@ -11,8 +11,8 @@ import {
 
 export const registerUser = (userData, history) => dispatch => {
     axios
-      .post("http://localhost:5000/register", userData)
-      .then(res => history.push("http://localhost:5000/login")) // re-direct to login on successful register
+      .post("https://job-board-backend-yq3b.onrender.com/register", userData)
+      .then(res => history.push("https://job-board-backend-yq3b.onrender.com/login")) // re-direct to login on successful register
       .catch(err =>
         dispatch({
           type: GET_ERRORS,
@@ -23,7 +23,7 @@ export const registerUser = (userData, history) => dispatch => {
 // Login - get user token
 export const loginUser = userData => dispatch => {
     axios
-      .post("http://localhost:5000/login", userData)
+      .post("https://job-board-backend-yq3b.onrender.com/login", userData)
       .then(res => {
         // Save to localStorage// Set token to localStorage
         const { token } = res.data;

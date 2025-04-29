@@ -33,7 +33,7 @@ function MyAccount(){
         async function getPostings(){
             const ctrl = new AbortController();
             setTimeout(() => ctrl.abort(), 5000);
-            const response = await fetch(`http://localhost:5000/user_applications?user=${encodeURIComponent(store.getState().auth.user.decoded.name)}`,{method: "GET"})
+            const response = await fetch(`https://job-board-backend-yq3b.onrender.com/user_applications?user=${encodeURIComponent(store.getState().auth.user.decoded.name)}`,{method: "GET"})
                 //const message = `An error occurred: ${response.statusText}`;
                 //window.alert(message);
                 let postInfo = await response.json();

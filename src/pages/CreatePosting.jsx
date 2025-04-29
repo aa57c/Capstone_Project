@@ -17,7 +17,7 @@ function CreatePosting(){
     const adminName = store.getState().auth.user.decoded.name;
 
     async function checkDuplicateClass(){
-        let response = await fetch(`http://localhost:5000/find-class?class=${Class}&section=${SectionID}`, {method: 'GET'});
+        let response = await fetch(`https://job-board-backend-yq3b.onrender.com/find-class?class=${Class}&section=${SectionID}`, {method: 'GET'});
         let classFound = await response.json();
         if(classFound.length === 0){
             //console.log(classFound);
@@ -48,7 +48,7 @@ function CreatePosting(){
             setTimeout(() => ctrl.abort(), 5000);
             try{
                 //changed backend endpoint to update posting
-                let request = await fetch("http://localhost:5000/update-posting",
+                let request = await fetch("https://job-board-backend-yq3b.onrender.com/update-posting",
                 {method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({class: data.class, section: data.section, job: data.job, isGTARequired: data.isGTARequired}),
@@ -66,7 +66,7 @@ function CreatePosting(){
             const ctrl = new AbortController();
             setTimeout(() => ctrl.abort(), 5000);
             try{
-                let request = await fetch("http://localhost:5000/create-posting", 
+                let request = await fetch("https://job-board-backend-yq3b.onrender.com/create-posting", 
                 {method: 'POST', 
                 headers: {'Content-Type': 'application/json'}, 
                 body: JSON.stringify(data), 

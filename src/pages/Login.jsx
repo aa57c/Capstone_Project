@@ -115,7 +115,7 @@ function Login(){
     }
 
     async function getUsers(){
-      const response = await fetch('http://localhost:5000/users');
+      const response = await fetch('https://job-board-backend-yq3b.onrender.com/users');
       if(response.ok){
         let users = await response.json();
         findAdmin(users);

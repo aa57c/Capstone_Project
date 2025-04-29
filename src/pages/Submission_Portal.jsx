@@ -35,7 +35,7 @@ function Submission_Portal(){
             try
             {
                 //Post to the backend, where it is listening.
-                let r = await fetch(`http://localhost:5000/applicants`, 
+                let r = await fetch(`https://job-board-backend-yq3b.onrender.com/applicants`, 
                 {method: "POST", body: formData, signal: ctrl.signal});
                 console.log("HTTP response code",r.status)
             }

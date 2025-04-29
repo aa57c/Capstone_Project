@@ -19,7 +19,7 @@ function Postings(){
     const [postInfo, setPostInfo] = useState([]);
     useEffect(() => {
         async function getPostings(){
-            const response = await fetch(`http://localhost:5000/postings`);
+            const response = await fetch(`https://job-board-backend-yq3b.onrender.com/postings`);
             if(response.ok){
                 //const message = `An error occurred: ${response.statusText}`;
                 //window.alert(message);
